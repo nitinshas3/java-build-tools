@@ -44,11 +44,11 @@ mvn package -- command the final process of bulding compiles tests and generates
 
 mvn clean -- package command like remove all the previous target files and create new one all together 
 
-<dependencies>
+/*<dependencies>
     <dependency>
         <groupId>junit</groupId><artifactId>junit</artifactId><version>4.13.2</version>
     </dependency>
-</dependencies>
+</dependencies> */
  dependency comes inside the tag of dependencies in pom xml file 
 
 when first done it downloads dependencies in local repo and saves it in .m2 then if needed checks there if not found goes to global repo
