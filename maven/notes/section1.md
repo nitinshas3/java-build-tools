@@ -32,7 +32,7 @@ by default wehn we create a java project it will be in version 5 so change that 
 
 editing of this file can be done here but this files need to be run in cmd 
 
-after changing the things in pom file compile it in cmd with mvn compile command
+after changing the things in pom file compile it in cmd with -- mvn compile -- command
 
 after this target folder gets created which has the jar files of our current project 
 
@@ -67,4 +67,32 @@ validate -> compile -> test -> package -> verify -> install ->deploy
 
 as of now we know compile test package , verify comes after jar or war file creation to test things like intergration testing etc 
 
-mvn install will do all the work before it and also add the jar or war file to local repo teh .m2 file 
+mvn install --- will do all the work before it and also add the jar or war file to local repo teh .m2 file 
+
+Bro here’s a one‑para note you can copy straight into your notes:
+
+**In Maven, you don’t literally create a project inside another; instead you use a *multi‑module project* setup where a parent project (`pom.xml` with `<packaging>pom</packaging>`) manages multiple child modules (each with its own `pom.xml`). The parent lists modules under `<modules>`, and children inherit dependencies, plugins, and versions from the parent. This structure is used to split large apps into smaller services or libraries while keeping centralized dependency management.** 
+
+
+ ---- ideal way to create a project ----
+
+
+Create a parent folder → e.g. MavenProjects/.
+
+Inside it, make separate sub‑folders for each project/module (e.g. AuthService, PaymentService, LibraryApp).
+
+In IntelliJ, go into each empty sub‑folder and generate a Maven module/project (so IntelliJ scaffolds src/main/java, src/main/resources, src/test/java, src/test/resources, plus pom.xml).
+
+At the very top (parent folder), you can keep a parent POM (packaging = pom) if you want to manage versions/dependencies centrally.
+
+--------end----
+
+Here’s a one‑para note based exactly on **your project structure** bro:
+
+**In a Maven project like mine (`src/main/java/com/NitinMVN/App.java`), the `src/main/java` folder holds all source code, and inside it IntelliJ already created a package `com.NitinMVN` where the starter `App.java` class lives. This package is just a folder structure, and I can add as many new classes as I want inside it (e.g., `User.java`, `Service.java`), or even create new packages under `com.NitinMVN` (like `com.NitinMVN.controller`, `com.NitinMVN.service`) to organize code. For configs or property files I should create `src/main/resources`, and for tests I use `src/test/java` with the same package structure (`com.NitinMVN`) so test classes line up with main code. This keeps my project clean, modular, and Maven‑standard.**
+
+-- one more way to create a spring project is to go to spring initialilzer website and mention all the things there and add extra dependenceis if you need then click generate , it generates a zip file which can be later moved into your project folder 
+
+--- running the project ---
+uses embeded tomcat server , just right click and press run ass java application , just like uvicorn 
+
