@@ -87,7 +87,7 @@ At the very top (parent folder), you can keep a parent POM (packaging = pom) if 
 
 --------end----
 
-Here’s a one‑para note based exactly on **your project structure** bro:
+
 
 **In a Maven project like mine (`src/main/java/com/NitinMVN/App.java`), the `src/main/java` folder holds all source code, and inside it IntelliJ already created a package `com.NitinMVN` where the starter `App.java` class lives. This package is just a folder structure, and I can add as many new classes as I want inside it (e.g., `User.java`, `Service.java`), or even create new packages under `com.NitinMVN` (like `com.NitinMVN.controller`, `com.NitinMVN.service`) to organize code. For configs or property files I should create `src/main/resources`, and for tests I use `src/test/java` with the same package structure (`com.NitinMVN`) so test classes line up with main code. This keeps my project clean, modular, and Maven‑standard.**
 
@@ -96,3 +96,5 @@ Here’s a one‑para note based exactly on **your project structure** bro:
 --- running the project ---
 uses embeded tomcat server , just right click and press run ass java application , just like uvicorn 
 
+---- creating a maven project from ide
+Click **File → New → Project** from the top-left menu. In the project creation window, first choose the **location** where you want the project (for example inside `java_build_tools/junit/examples`). The **Name** you enter will become your **artifactId**, and IntelliJ will automatically derive the base **package (groupId)** from it (you can adjust it if needed). Select **Maven Archetype** and choose the default **maven-archetype-quickstart**. Do **not** click the **Add Archetype** button — that popup is not required for normal use. Make sure Maven is selected on the left side, then click **Create**. After this, IntelliJ will show a popup asking whether to open in **This Window** or **New Window** — click **Cancel** here to avoid replacing your current workspace. Finally, go back to your main project view, locate the newly created folder, right-click the `pom.xml`, and select **Add as Maven Project** so it gets added properly as a module inside your existing project.
