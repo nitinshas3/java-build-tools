@@ -98,3 +98,7 @@ uses embeded tomcat server , just right click and press run ass java application
 
 ---- creating a maven project from ide
 Click **File → New → Project** from the top-left menu. In the project creation window, first choose the **location** where you want the project (for example inside `java_build_tools/junit/examples`). The **Name** you enter will become your **artifactId**, and IntelliJ will automatically derive the base **package (groupId)** from it (you can adjust it if needed). Select **Maven Archetype** and choose the default **maven-archetype-quickstart**. Do **not** click the **Add Archetype** button — that popup is not required for normal use. Make sure Maven is selected on the left side, then click **Create**. After this, IntelliJ will show a popup asking whether to open in **This Window** or **New Window** — click **Cancel** here to avoid replacing your current workspace. Finally, go back to your main project view, locate the newly created folder, right-click the `pom.xml`, and select **Add as Maven Project** so it gets added properly as a module inside your existing project.
+
+----
+
+better than that for projects not including spring just create manual files or else you will have version issues , for spring project use spring initialzer , and with extension you can right click and get all the things like generating tests and all 
